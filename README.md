@@ -7,6 +7,23 @@
 <br>
 <br>
 
+### What we will be doing in this tutorial:
+
+<br>
+
+- How to use React.js with react-three-fiber to render and manipulate 3d models
+
+- How to interactively change properties of the 3d model
+
+- How to work with GLTF file formats in React
+
+<br>
+
+[<img src="./src/img/changin-all-colors.gif"/>]()
+
+<br>
+<br>
+
 ### Articles
 
 [Building a 3D Product Configurator with Nuxt and Three.js (Part 1)](https://official-osorina.medium.com/creating-a-3d-configurator-with-nuxt-and-three-js-part-1-6d40da0209e0)
@@ -25,22 +42,3 @@
 
 <br>
 <br>
-
----
-
-<br>
-<br>
-
-### What we will be doing in this tutorial:
-
-<br>
-
-- How to use React.js with react-three-fiber to render and manipulate 3d models
-
-- How to interactively change properties of the 3d model
-
-- How to work with GLTF file formats in React
-
-<br>
-
-[<img src="./src/img/changin-all-colors.gif"/>]()
