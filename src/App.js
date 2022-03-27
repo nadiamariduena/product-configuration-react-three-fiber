@@ -37,7 +37,7 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.shoe_3.geometry}
         material={materials.inner}
-        material-color={"#97E7F7"}
+        material-color={"#788780"}
       />
       <mesh
         geometry={nodes.shoe_4.geometry}
@@ -52,7 +52,7 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.shoe_6.geometry}
         material={materials.band}
-        material-color={"#BCD7D4"}
+        material-color={props.customColors.band}
       />
       <mesh
         geometry={nodes.shoe_7.geometry}
@@ -66,8 +66,9 @@ function Model({ ...props }) {
 function App() {
   //
   const [mesh, setMesh] = useState("#BCD7D4");
-  const [stripes, setStripes] = useState("#ffffff");
-  const [soul, setSoul] = useState("#ffffff");
+  const [stripes, setStripes] = useState("#b2cdc7");
+  const [soul, setSoul] = useState("#BCD7D4");
+  const [band, setBand] = useState("#ffffff");
   //
 
   return (
@@ -89,8 +90,9 @@ function App() {
                 <Model
                   customColors={{
                     mesh: mesh,
-                    stripes: "#BCD7D4",
-                    soul: "#BCD7D4",
+                    stripes: stripes,
+                    soul: soul,
+                    band: band,
                   }}
                 />
 
@@ -114,19 +116,41 @@ function App() {
                 type="color"
                 id="mesh"
                 name="mesh"
-                value="#FFD1B8"
+                value={mesh}
                 onChange={(e) => setMesh(e.target.value)}
               />
               <label for="mesh">Mesh</label>
             </div>
 
             <div>
-              <input type="color" id="stripes" name="stripes" value="#f6b73c" />
+              <input
+                type="color"
+                id="stripes"
+                name="stripes"
+                value={stripes}
+                onChange={(e) => setStripes(e.target.value)}
+              />
               <label for="stripes">Stripes</label>
             </div>
             <div>
-              <input type="color" id="soul" name="soul" value="#FFD1B8" />
+              <input
+                type="color"
+                id="soul"
+                name="soul"
+                value={soul}
+                onChange={(e) => setSoul(e.target.value)}
+              />
               <label for="soul">Soul</label>
+            </div>
+            <div>
+              <input
+                type="color"
+                id="band"
+                name="band"
+                value={band}
+                onChange={(e) => setBand(e.target.value)}
+              />
+              <label for="band">Band</label>
             </div>
           </div>
         </div>
