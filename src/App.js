@@ -18,7 +18,7 @@ function Model({ ...props }) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/shoe.gltf");
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} scale={3}>
       <mesh geometry={nodes.shoe.geometry} material={materials.laces} />
       <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
       <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
@@ -44,7 +44,19 @@ function App() {
             <Canvas>
               <Suspense fallback={null}>
                 <ambientLight />
+                <spotLight
+                  intensity={0.9}
+                  angle={0.1}
+                  penumbra={1}
+                  position={[10, 15, 10]}
+                  castShadow
+                />
                 <Model />
+                <OrbitControls
+                  enablePan={true}
+                  enableZoom={true}
+                  enableRotate={true}
+                />
               </Suspense>
             </Canvas>
           </div>

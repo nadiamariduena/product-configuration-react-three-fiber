@@ -358,7 +358,7 @@ export default App;
 
 <br>
 
-- INside the **downloads folder** of your computer, extract the zip containing the 5 files, once decompressed, look for the **shoe.js**, right click on it and choose open in a text, there you will find the following data related to the shoe, **this is important, as it will serve to modify each part of the shoe**
+- INside the **downloads folder** of your computer, extract the zip containing the 5 files, once decompressed, look for the **shoe.js**, right click on it and choose to **open in a text editor** , there you will find the following data related to the shoe, **this is important, as it will serve to modify each part of the shoe**
 
 <br>
 
@@ -589,4 +589,70 @@ function App() {
 }
 
 export default App;
+```
+
+<br>
+<br>
+
+## Scale the shoe
+
+```javascript
+function Model({ ...props }) {
+  const group = useRef();
+  const { nodes, materials } = useGLTF("/shoe.gltf");
+  return (
+    <group ref={group} {...props} dispose={null} scale={3} ✋>
+```
+
+### As you can see the shoes is missing some light, lets add it
+
+```javascript
+<Canvas>
+  <Suspense fallback={null}>
+    <ambientLight />
+    <spotLight
+      intensity={0.9}
+      angle={0.1}
+      penumbra={1}
+      position={[10, 15, 10]}
+      castShadow
+    />
+    <Model />
+  </Suspense>
+</Canvas>
+```
+
+[<img src="./src/img/spotlight.gif"/>]()
+
+<br>
+<br>
+
+# Orbitscontrol
+
+- To be able to rotate the model and also zoom, we will be using the orbits control
+
+<br>
+
+> **What is panning?** In cinematography and photography panning means swivelling a still or video camera horizontally from a fixed position.
+
+[Panning (camera)](<https://en.wikipedia.org/wiki/Panning_(camera)>)
+
+<br>
+
+```javascript
+<Canvas>
+  <Suspense fallback={null}>
+    <ambientLight />
+    <spotLight
+      intensity={0.9}
+      angle={0.1}
+      penumbra={1}
+      position={[10, 15, 10]}
+      castShadow
+    />
+    <Model />
+    ✋
+    <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />✋
+  </Suspense>
+</Canvas>
 ```
