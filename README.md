@@ -19,7 +19,7 @@
 
 <br>
 
-[<img src="./src/img/changin-all-colors.gif"/>]()
+[<img src="./src/img/changin-all-colors2.gif"/>]()
 
 <br>
 <br>
