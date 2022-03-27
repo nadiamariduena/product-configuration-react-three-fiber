@@ -157,17 +157,17 @@ function App() {
 
           <div className="colors">
             <div>
-              <input type="color" id="head" name="head" value="#FFD1B8" />
-              <label for="head">Main</label>
+              <input type="color" id="mesh" name="mesh" value="#FFD1B8" />
+              <label for="mesh">Mesh</label>
             </div>
 
             <div>
-              <input type="color" id="body" name="body" value="#f6b73c" />
-              <label for="body">Stripes</label>
+              <input type="color" id="stripes" name="stripes" value="#f6b73c" />
+              <label for="stripes">Stripes</label>
             </div>
             <div>
-              <input type="color" id="body" name="body" value="#FFD1B8" />
-              <label for="body">Soul</label>
+              <input type="color" id="soul" name="soul" value="#FFD1B8" />
+              <label for="soul">Soul</label>
             </div>
           </div>
         </div>

@@ -842,10 +842,70 @@ function Model({ ...props }) {
 />
 ```
 
+<br>
+
 ### result
 
 [<img src="./src/img/changincolor-with-attributes.gif"/>]()
 
 <br>
+<br>
 
 #### With this we can start to use the states to handle the changing of the colors
+
+- But before setting up the **states** let's change the following, as for the next step you will need these properties replaced:
+
+```javascript
+//
+// before
+//
+<div className="colors">
+  <div>
+    <input type="color" id="head" name="head" value="#FFD1B8" />
+    <label for="head">Main</label>
+  </div>
+
+  <div>
+    <input type="color" id="body" name="body" value="#f6b73c" />
+    <label for="body">Stripes</label>
+  </div>
+  <div>
+    <input type="color" id="body" name="body" value="#FFD1B8" />
+    <label for="body">Soul</label>
+  </div>
+</div>
+//
+//
+//   After
+
+   <div className="colors">
+            <div>
+              <input type="color" id="mesh" name="mesh" value="#FFD1B8" />
+              <label for="mesh">Mesh</label>
+            </div>
+
+            <div>
+              <input type="color" id="stripes" name="stripes" value="#f6b73c" />
+              <label for="stripes">Stripes</label>
+            </div>
+            <div>
+              <input type="color" id="soul" name="soul" value="#FFD1B8" />
+              <label for="soul">Soul</label>
+            </div>
+          </div>
+```
+
+<br>
+<br>
+
+### The states
+
+<br>
+
+##### Here we will add a state for each color
+
+```javascript
+const [mesh, setMesh] = useState("#ffffff");
+const [stripes, setStripes] = useState("#ffffff");
+const [soul, setSoul] = useState("#ffffff");
+```
