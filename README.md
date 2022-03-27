@@ -671,7 +671,7 @@ function Model({ ...props }) {
 
 <br>
 
-- We will add attributes to all the parts of the model we want to modify with a different color
+- We will add attributes to all the parts of the model we want to modify with a different color, example: **material-color={"red"}**
 
 <br>
 
@@ -684,18 +684,42 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.shoe.geometry}
         material={materials.laces}
-        material-color={"red"}
+        material-color={"#94B8B7"}
       />
-      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
-      <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
-      <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} />
-      <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} />
-      <mesh geometry={nodes.shoe_5.geometry} material={materials.stripes} />
-      <mesh geometry={nodes.shoe_6.geometry} material={materials.band} />
+      <mesh
+        geometry={nodes.shoe_1.geometry}
+        material={materials.mesh}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_2.geometry}
+        material={materials.caps}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_3.geometry}
+        material={materials.inner}
+        material-color={"#97E7F7"}
+      />
+      <mesh
+        geometry={nodes.shoe_4.geometry}
+        material={materials.sole}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_5.geometry}
+        material={materials.stripes}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_6.geometry}
+        material={materials.band}
+        material-color={"#BCD7D4"}
+      />
       <mesh
         geometry={nodes.shoe_7.geometry}
         material={materials.patch}
-        material-color={"yellow"}
+        material-color={"#BCD7D4"}
       />
     </group>
   );

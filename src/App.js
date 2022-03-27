@@ -22,18 +22,42 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.shoe.geometry}
         material={materials.laces}
-        material-color={"red"}
+        material-color={"#94B8B7"}
       />
-      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
-      <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
-      <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} />
-      <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} />
-      <mesh geometry={nodes.shoe_5.geometry} material={materials.stripes} />
-      <mesh geometry={nodes.shoe_6.geometry} material={materials.band} />
+      <mesh
+        geometry={nodes.shoe_1.geometry}
+        material={materials.mesh}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_2.geometry}
+        material={materials.caps}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_3.geometry}
+        material={materials.inner}
+        material-color={"#97E7F7"}
+      />
+      <mesh
+        geometry={nodes.shoe_4.geometry}
+        material={materials.sole}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_5.geometry}
+        material={materials.stripes}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_6.geometry}
+        material={materials.band}
+        material-color={"#BCD7D4"}
+      />
       <mesh
         geometry={nodes.shoe_7.geometry}
         material={materials.patch}
-        material-color={"yellow"}
+        material-color={"#BCD7D4"}
       />
     </group>
   );
@@ -76,7 +100,7 @@ function App() {
 
           <div className="colors">
             <div>
-              <input type="color" id="head" name="head" value="#e66465" />
+              <input type="color" id="head" name="head" value="#FFD1B8" />
               <label for="head">Main</label>
             </div>
 
@@ -85,7 +109,7 @@ function App() {
               <label for="body">Stripes</label>
             </div>
             <div>
-              <input type="color" id="body" name="body" value="#f6b73c" />
+              <input type="color" id="body" name="body" value="#FFD1B8" />
               <label for="body">Soul</label>
             </div>
           </div>
