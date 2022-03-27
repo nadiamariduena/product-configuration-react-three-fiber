@@ -35,6 +35,8 @@
 
 ##### [documentation](https://docs.pmnd.rs/react-three-fiber/getting-started/examples)
 
+<br>
+
 #### Models
 
 ##### Get some models here:
@@ -44,9 +46,21 @@
 []()
 
 <br>
+
+#### Installation
+
+```javascript
+npm i three @react-three/fiber @react-three/drei
+```
+
+##### What is react three Drei?
+
+> A growing collection of useful helpers and fully functional, ready-made abstractions for react-three-fiber. If you make a component that is generic enough to be useful to others, think about making it available here through a PR! npm install @react-three/drei.
+
+<br>
 <br>
 
-### What we will be doing in this tutorial
+### What we will be doing in this tutorial:
 
 <br>
 
