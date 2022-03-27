@@ -41,11 +41,7 @@ function App() {
       <div class="wrapper">
         <div class="card">
           <div class="product-canvas">
-            <Canvas>
-              <mesh ref={ref}>
-                <boxGeometry attach="geometry" args={[4, 4, 4]} />
-              </mesh>
-            </Canvas>
+            <Canvas></Canvas>
           </div>
           {/* 
           

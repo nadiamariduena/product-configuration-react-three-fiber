@@ -406,6 +406,8 @@ export default function Model({ ...props }) {
 useGLTF.preload("/shoe.gltf");
 ```
 
+<br>
+
 #### As you can see, we already have the top of this code in our code, now we will see what and how we will be implementing it.
 
 - we will be taking this code and placing it **on top of our app function** like so:
@@ -420,6 +422,10 @@ function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/shoe.gltf");
   return (
     <group ref={group} {...props} dispose={null}>
+    //
+        //👍the following below access each individual part of the model
+
+        //
       <mesh geometry={nodes.shoe.geometry} material={materials.laces} />
       <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
       <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
