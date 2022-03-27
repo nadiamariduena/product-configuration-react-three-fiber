@@ -756,8 +756,96 @@ function Model({ ...props ✋ }) {
 
 <br>
 
-- check the tutorial [36:50](https://youtu.be/2jwqotdQmdQ?t=2210) There you will see the colors he added in the function (I ave different colors so to not confuse you, check the colors on the video, they match the code below)
+- check the tutorial [36:50](https://youtu.be/2jwqotdQmdQ?t=2210) There you will see the colors he added in the function (I ave different colors so to not confuse you, check the colors on the video, they match the code below).
 
 ```javascript
 <Model customColors={{ mesh: "red", stripes: "blue", soul: "white" }} />
 ```
+
+<br>
+
+#### Now replace the colors from the Model function with the props we just created here "above" (you can add your own default colors)
+
+<br>
+
+- Here I am going to focus in the link between this to parts of the code
+
+```javascript
+function Model({ ...props }) {
+  const group = useRef();
+  const { nodes, materials } = useGLTF("/shoe.gltf");
+  return (
+    <group ref={group} {...props} dispose={null} scale={3}>
+      <mesh
+        geometry={nodes.shoe.geometry}
+        material={materials.laces}
+        material-color={"#94B8B7"}
+      />
+      <mesh
+        geometry={nodes.shoe_1.geometry}
+        material={materials.mesh}
+        material-color={props.customColors.mesh ✋}
+      />
+      <mesh
+        geometry={nodes.shoe_2.geometry}
+        material={materials.caps}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_3.geometry}
+        material={materials.inner}
+        material-color={"#97E7F7"}
+      />
+      <mesh
+        geometry={nodes.shoe_4.geometry}
+        material={materials.sole}
+        material-color={props.customColors.soul ✋}
+      />
+      <mesh
+        geometry={nodes.shoe_5.geometry}
+        material={materials.stripes}
+        material-color={props.customColors.stripes ✋}
+      />
+      <mesh
+        geometry={nodes.shoe_6.geometry}
+        material={materials.band}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_7.geometry}
+        material={materials.patch}
+        material-color={"#BCD7D4"}
+      />
+    </group>
+  );
+}
+
+/*
+
+
+
+*/
+<Model customColors={{ mesh: "red" ✋, stripes: "blue" , soul: "white"✋ }} />;
+```
+
+### Now that you see the logic, we can add the colors we want as default in the code above
+
+- Mine will be this
+
+```javascript
+<Model
+  customColors={{
+    mesh: "#BCD7D4",
+    stripes: "#BCD7D4",
+    soul: "#BCD7D4",
+  }}
+/>
+```
+
+### result
+
+[<img src="./src/img/changincolor-with-attributes.gif"/>]()
+
+<br>
+
+#### With this we can start to use the states to handle the changing of the colors

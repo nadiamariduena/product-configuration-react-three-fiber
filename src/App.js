@@ -27,6 +27,54 @@ function Model({ ...props }) {
       <mesh
         geometry={nodes.shoe_1.geometry}
         material={materials.mesh}
+        material-color={props.customColors.mesh}
+      />
+      <mesh
+        geometry={nodes.shoe_2.geometry}
+        material={materials.caps}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_3.geometry}
+        material={materials.inner}
+        material-color={"#97E7F7"}
+      />
+      <mesh
+        geometry={nodes.shoe_4.geometry}
+        material={materials.sole}
+        material-color={props.customColors.soul}
+      />
+      <mesh
+        geometry={nodes.shoe_5.geometry}
+        material={materials.stripes}
+        material-color={props.customColors.stripes}
+      />
+      <mesh
+        geometry={nodes.shoe_6.geometry}
+        material={materials.band}
+        material-color={"#BCD7D4"}
+      />
+      <mesh
+        geometry={nodes.shoe_7.geometry}
+        material={materials.patch}
+        material-color={"#BCD7D4"}
+      />
+    </group>
+  );
+}
+
+/*
+
+
+   <group ref={group} {...props} dispose={null} scale={3}>
+      <mesh
+        geometry={nodes.shoe.geometry}
+        material={materials.laces}
+        material-color={"#94B8B7"}
+      />
+      <mesh
+        geometry={nodes.shoe_1.geometry}
+        material={materials.mesh}
         material-color={"#BCD7D4"}
       />
       <mesh
@@ -60,8 +108,9 @@ function Model({ ...props }) {
         material-color={"#BCD7D4"}
       />
     </group>
-  );
-}
+
+
+*/
 
 function App() {
   //
@@ -83,17 +132,15 @@ function App() {
                   position={[10, 15, 10]}
                   castShadow
                 />
-                {/* 
-                
-                
-                */}
+
                 <Model
-                  customColors={{ mesh: "red", stripes: "blue", soul: "white" }}
+                  customColors={{
+                    mesh: "#BCD7D4",
+                    stripes: "#BCD7D4",
+                    soul: "#BCD7D4",
+                  }}
                 />
-                {/* 
-                
-                
-                */}
+
                 <OrbitControls
                   enablePan={true}
                   enableZoom={true}
