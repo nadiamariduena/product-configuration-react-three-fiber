@@ -83,7 +83,17 @@ function App() {
                   position={[10, 15, 10]}
                   castShadow
                 />
-                <Model />
+                {/* 
+                
+                
+                */}
+                <Model
+                  customColors={{ mesh: "red", stripes: "blue", soul: "white" }}
+                />
+                {/* 
+                
+                
+                */}
                 <OrbitControls
                   enablePan={true}
                   enableZoom={true}

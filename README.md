@@ -738,6 +738,26 @@ function Model({ ...props }) {
 <br>
 <br>
 
+# 🌈
+
 ## Change the color dynamically
 
+#### Since we are already passing the information of the shoe model through props here:
+
+```javascript
+function Model({ ...props ✋ }) {
+```
+
 <br>
+
+#### We can add the following
+
+- As you can see, we are adding each of the parts of the shoe model to the **Model** component.
+
+<br>
+
+- check the tutorial [36:50](https://youtu.be/2jwqotdQmdQ?t=2210) There you will see the colors he added in the function (I ave different colors so to not confuse you, check the colors on the video, they match the code below)
+
+```javascript
+<Model customColors={{ mesh: "red", stripes: "blue", soul: "white" }} />
+```
