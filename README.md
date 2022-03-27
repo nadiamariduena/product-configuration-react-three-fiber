@@ -170,3 +170,98 @@ export default App;
   align-items: center;
 }
 ```
+
+<br>
+
+#### With this, you will have a square in the middle
+
+<br>
+<br>
+
+### THE BOX (color picker)
+
+[product customiser](https://codepen.io/ui-code-tv/pen/PoOezaw)
+
+<br>
+
+- Here we will set up a box that will contain few options to choose a color, you will understand this later
+
+<br>
+
+```html
+<div class="wrapper">
+  <div class="card">
+    <!-- CANVAS  -->
+    <div class="product-canvas"></div>
+    <h2>Color chooser</h2>
+
+    <!-- 
+
+
+     COLOR PICKER
+
+    
+    -->
+    <div class="colors">
+      <div>
+        <input type="color" id="head" name="head" value="#e66465" />
+        <label for="head">Main</label>
+      </div>
+
+      <div>
+        <input type="color" id="body" name="body" value="#f6b73c" />
+        <label for="body">Stripes</label>
+      </div>
+      <div>
+        <input type="color" id="body" name="body" value="#f6b73c" />
+        <label for="body">Soul</label>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<br>
+
+<br>
+
+#### Styles
+
+```css
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #5dafb8;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+  height: 50vh;
+  border-radius: 13px;
+  box-shadow: 20px 40px 33px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  width: 35vw;
+  background-color: #6cc2ce;
+}
+
+.product-canvas {
+  width: 35vw;
+  height: 38vh;
+  background: white;
+  box-shadow: 10px 15px 15px 6px #3891b4;
+  border-radius: 0px;
+  margin-bottom: 20px;
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+}
+
+.colors div {
+  padding: 8px;
+}
+```
