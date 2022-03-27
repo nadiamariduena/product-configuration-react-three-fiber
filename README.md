@@ -725,3 +725,19 @@ function Model({ ...props }) {
   );
 }
 ```
+
+### result
+
+[<img src="./src/img/changincolor-with-attributes.gif"/>]()
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## Change the color dynamically
+
+<br>
