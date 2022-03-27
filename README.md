@@ -898,7 +898,13 @@ function Model({ ...props }) {
 <br>
 <br>
 
-### The states
+---
+
+<br>
+
+## Events
+
+### The states 🐖
 
 <br>
 
@@ -909,3 +915,63 @@ const [mesh, setMesh] = useState("#ffffff");
 const [stripes, setStripes] = useState("#ffffff");
 const [soul, setSoul] = useState("#ffffff");
 ```
+
+<br>
+
+#### Now we need to create a <u>onChange </u> handler
+
+- This is what is going to make the **change happen**
+
+```javascript
+ onChange={(e) => setMesh(e.target.value)}/>
+```
+
+- now replace the value here where you see the yellow hand, for the value of the **state**
+
+```javascript
+const [mesh, setMesh] = useState("#ffffff");
+//
+//
+//
+// before
+<input
+  type="color"
+  id="mesh"
+  name="mesh"
+  value="#FFD1B8"
+  onChange={(e) => setMesh(e.target.value)}
+/>
+//after
+     <input
+                type="color"
+                id="mesh"
+                name="mesh"
+                value={mesh ✋}
+                onChange={(e) => setMesh(e.target.value)}
+              />
+```
+
+<br>
+
+- Replace this as well for the **{mesh}**
+
+```javascript
+<Model
+  customColors={{
+    mesh: mesh,
+    stripes: "#BCD7D4",
+    soul: "#BCD7D4",
+  }}
+/>
+```
+
+<br>
+
+[<img src="./src/img/events__onChangehandler.gif"/>]()
+
+<br>
+<br>
+
+---
+
+<br>
