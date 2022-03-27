@@ -126,7 +126,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 
 ```javascript
 // args: arguments
-args={[2,2,]}
+args={[2,2,2]}
 ```
 
 <br>
@@ -136,3 +136,37 @@ args={[2,2,]}
 <br>
 
 > **A Mesh** is a basic scene object in three.js, and it's used to hold the geometry and the material needed to represent a shape in 3D space. We'll create a new mesh using a BoxGeometry and a MeshStandardMaterial which automatically attach to their parent. [Adding a Mesh Component](https://docs.pmnd.rs/react-three-fiber/getting-started/your-first-scene)
+
+<br>
+
+```javascript
+function App() {
+  const ref = useRef();
+  //
+  return (
+    <div className="App">
+      <Canvas>
+        <mesh ref={ref}>
+          <boxGeometry attach="geometry" args={[4, 4, 4]} />
+        </mesh>
+      </Canvas>
+    </div>
+  );
+}
+
+export default App;
+```
+
+<br>
+
+### Add also this to the css, to center the box
+
+```css
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
