@@ -442,3 +442,151 @@ function App() {
   //
 
 ```
+
+<br>
+<br>
+
+# 🥭
+
+### Now lets render the model
+
+<br>
+
+- You will be adding the model in a **suspense**. 🔴 What the suspense will do here, is to catch for errors in case there is an issue with the model, loading etc
+
+<br>
+
+```javascript
+  return (
+    <div className="App">
+      <div className="wrapper">
+        <div className="card">
+          <div className="product-canvas">
+            <Canvas>
+
+
+<Suspense>
+
+👍
+
+</Suspense>
+
+            </Canvas>
+          </div>
+          {/*
+
+
+          */}
+          <h2>Color chooser</h2>
+```
+
+<br>
+<br>
+
+### Adding the model to the scene
+
+- we will also add a spinner to the suspense but it will be set as **null**
+
+```javascript
+<Suspense fallback={null}></Suspense>
+```
+
+<br>
+
+### add an ambient light and then the model
+
+- As you can notice, the model is coming from the function above the App function.
+
+```javascript
+<Canvas>
+  <Suspense fallback={null}>
+    <ambientLight />
+    <Model />
+  </Suspense>
+</Canvas>
+```
+
+[<img src="./src/img/model-1.gif"/>]()
+
+<br>
+
+```javascript
+import { Suspense, useRef, useState } from "react";
+//
+// the canvas is our scene
+import { Canvas } from "@react-three/fiber";
+//
+// The Orbits controls will help us to rotate the model in a tridimensional way
+import { OrbitControls, useGLTF } from "@react-three/drei";
+// the useGLTF, will help us to load the model in the gltf format.
+
+/*
+
+
+
+
+*/
+
+function Model({ ...props }) {
+  const group = useRef();
+  const { nodes, materials } = useGLTF("/shoe.gltf");
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.shoe.geometry} material={materials.laces} />
+      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
+      <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
+      <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} />
+      <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} />
+      <mesh geometry={nodes.shoe_5.geometry} material={materials.stripes} />
+      <mesh geometry={nodes.shoe_6.geometry} material={materials.band} />
+      <mesh geometry={nodes.shoe_7.geometry} material={materials.patch} />
+    </group>
+  );
+}
+
+function App() {
+  //
+  //
+
+  return (
+    <div className="App">
+      <div className="wrapper">
+        <div className="card">
+          <div className="product-canvas">
+            // ✋ the model
+            <Canvas>
+              <Suspense fallback={null}>
+                <ambientLight />
+                <Model />
+              </Suspense>
+            </Canvas>
+          </div>
+          {/* 
+          
+          
+          */}
+          <h2>Color chooser</h2>
+
+          <div className="colors">
+            <div>
+              <input type="color" id="head" name="head" value="#e66465" />
+              <label for="head">Main</label>
+            </div>
+
+            <div>
+              <input type="color" id="body" name="body" value="#f6b73c" />
+              <label for="body">Stripes</label>
+            </div>
+            <div>
+              <input type="color" id="body" name="body" value="#f6b73c" />
+              <label for="body">Soul</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```

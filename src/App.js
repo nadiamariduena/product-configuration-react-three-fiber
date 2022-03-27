@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 //
 // the canvas is our scene
 import { Canvas } from "@react-three/fiber";
@@ -38,10 +38,15 @@ function App() {
 
   return (
     <div className="App">
-      <div class="wrapper">
-        <div class="card">
-          <div class="product-canvas">
-            <Canvas></Canvas>
+      <div className="wrapper">
+        <div className="card">
+          <div className="product-canvas">
+            <Canvas>
+              <Suspense fallback={null}>
+                <ambientLight />
+                <Model />
+              </Suspense>
+            </Canvas>
           </div>
           {/* 
           
@@ -49,7 +54,7 @@ function App() {
           */}
           <h2>Color chooser</h2>
 
-          <div class="colors">
+          <div className="colors">
             <div>
               <input type="color" id="head" name="head" value="#e66465" />
               <label for="head">Main</label>
