@@ -47,7 +47,7 @@
 
 - low poly [poly.pizza](https://poly.pizza/search/shoe)
 
-[]()
+- [cgtrader](https://www.cgtrader.com/3d-models?keywords=zapatilla)
 
 <br>
 
@@ -139,6 +139,12 @@ args={[2,2,2]}
 
 <br>
 
+#### 🌞 For testing purposes
+
+- For testing purposes we will add the following, later on we will replace it with what we will actually use to interact with the model.
+
+<br>
+
 ```javascript
 function App() {
   const ref = useRef();
@@ -173,18 +179,20 @@ export default App;
 
 <br>
 
-#### With this, you will have a square in the middle
+#### With this setup you will have a square in the middle, now that we know that its working we will replace this setup with what have here below.
 
 <br>
 <br>
 
 ### THE BOX (color picker)
 
-[product customiser](https://codepen.io/ui-code-tv/pen/PoOezaw)
+#### replace the previous setup with this:
+
+#### [product customiser](https://codepen.io/ui-code-tv/pen/PoOezaw)
 
 <br>
 
-- Here we will set up a box that will contain few options to choose a color, you will understand this later
+##### Here we will set up a box that will contain few options to choose a color, you will understand this later
 
 <br>
 
@@ -222,6 +230,8 @@ export default App;
 ```
 
 <br>
+
+[<img src="./src/img/form-color-picker.gif"/>](https://codepen.io/ui-code-tv/pen/PoOezaw)
 
 <br>
 
@@ -264,4 +274,98 @@ export default App;
 .colors div {
   padding: 8px;
 }
+```
+
+<br>
+<br>
+
+#### This is what you should have in your code
+
+```javascript
+import { useRef, useState } from "react";
+//
+// the canvas is our scene
+import { Canvas } from "@react-three/fiber";
+//
+// The Orbits controls will help us to rotate the model in a tridimensional way
+import { OrbitControls, useGLTF } from "@react-three/drei";
+// the useGLTF, will help us to load the model in the gltf format.
+
+function App() {
+  //
+
+  const ref = useRef();
+  //
+
+  return (
+    <div className="App">
+      {/* <Canvas>
+        <mesh ref={ref}>
+          <boxGeometry attach="geometry" args={[4, 4, 4]} />
+        </mesh>
+      </Canvas> */}
+
+      <div class="wrapper">
+        <div class="card">
+          <div class="product-canvas"></div>
+          <h2>Color chooser</h2>
+
+          <div class="colors">
+            <div>
+              <input type="color" id="head" name="head" value="#e66465" />
+              <label for="head">Main</label>
+            </div>
+
+            <div>
+              <input type="color" id="body" name="body" value="#f6b73c" />
+              <label for="body">Stripes</label>
+            </div>
+            <div>
+              <input type="color" id="body" name="body" value="#f6b73c" />
+              <label for="body">Soul</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+<br>
+
+#### The outcome is exactly what we have on the img
+
+[<img src="./src/img/form-color-picker.gif"/>](https://codepen.io/ui-code-tv/pen/PoOezaw)
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## The 3D MODEL
+
+- [Go to this](https://github.com/ui-code-tv/3d-shoe-model-gltf) git repository and download the 5 files
+
+- Once you have them, put the 5 files inside the **public folder** of your project
+
+#### Since you also saved a copy of the zip downloaded from github containing the shoe files, we will do the following:
+
+<br>
+
+- INside the **downloads folder** of your computer, extract the zip containing the 5 files, once decompressed, look for the **shoe.js**, right click on it and choose open in a text, there you will find the following data related to the shoe, **this is important, as it will serve to modify each part of the shoe**
+
+<br>
+
+[<img src="./src/img/form-color-picker.gif"/>](https://codepen.io/ui-code-tv/pen/PoOezaw)
+
+🔴 If your zip didnt came with a shoe.js ,type the following command like you see it on the gif above
+
+```javascript
+npx gltfjsx shoe.gltf
 ```
