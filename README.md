@@ -1,4 +1,4 @@
-### Product Configurator with react-three-fiber
+### Product Configurator with react-three-fiber 🌈
 
 <br>
 
